@@ -9,79 +9,184 @@
   --dark-blue: hsl(223, 47%, 23%);
 }
 
-/* Resets */
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+/* global */
 
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
-ol[role="list"] {
-  list-style: none;
-}
-
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
-/* Set core body defaults */
 body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
+  background-color: var(--pale-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: "Red Hat Display", sans-serif;
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+main {
+  position: static;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
 }
 
-/* Make images easier to work with */
-img,
-picture {
-  max-width: 100%;
-  display: block;
+/* summary card */
+.summarycard {
+  background: #ffffff;
+  box-shadow: 0px 40px 40px -20px rgba(13, 48, 189, 0.151826);
+  border-radius: 20px;
+  width: 90%;
+  min-width: var(--min-mobile-width);
+  max-width: 480px;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
+.summarycard__hero {
+  width: 100%;
+  height: 30vw;
+  max-height: 220px;
+  min-height: 190px;
+  background: url("../../images/illustration-hero.svg");
+  background-size: cover;
+  background-position: center center;
+  border-radius: 20px 20px 0 0;
 }
 
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
+.summarycard__content {
+  padding: 48px;
+}
+.summarycard__content h1 {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 37px;
+  text-align: center;
+  color: var(--dark-blue);
+}
 
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+.summarycard__content > p {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  text-align: center;
+  color: var(--desaturated-blue);
+  margin-top: 18px;
+}
+
+.summarycard__content__plan {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--very-pale-blue);
+  border-radius: 11px;
+  padding: 25px;
+}
+
+.summarycard__content__plan__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+.summarycard__content__plan__info h3 {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 21px;
+  color: var(--dark-blue);
+}
+
+.summarycard__content__plan__info p {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: var(--desaturated-blue);
+  margin-top: 6px;
+}
+
+.summarycard__content__plan a {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  text-decoration-line: underline;
+  color: var(--bright-blue);
+  transition: color 200ms ease-in-out;
+}
+
+.summarycard__content__plan a:hover {
+  color: #766cf1;
+  text-decoration-line: none;
+}
+
+.summarycard__content__actions {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.summarycard__content__actions button {
+  width: 100%;
+  padding: 15px 0;
+  font-family: "Red Hat Display", sans-serif;
+  cursor: pointer;
+  background: var(--bright-blue);
+  box-shadow: 0px 20px 20px rgba(56, 42, 225, 0.190291);
+  border-radius: 11px;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 20px;
+  color: #ffffff;
+  transition: background 200ms ease-in-out;
+}
+
+.summarycard__content__actions button:hover {
+  background: #766cf1;
+}
+
+.summarycard__content__actions a {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 20px;
+  color: #717fa6;
+  margin-top: 32px;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 200ms ease-in-out;
+}
+
+.summarycard__content__actions a:hover {
+  color: #1f2e55;
+}
+
+/* graphic asset */
+#graphic-asset {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  z-index: 1;
+  background: url("../../images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 100%;
+  transition: height 300ms ease-in;
+}
+
+/* media queries */
+@media only screen and (max-width: 768px) {
+  #graphic-asset {
+    height: 32%;
+    background: url("../../images/pattern-background-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: top;
   }
 }
