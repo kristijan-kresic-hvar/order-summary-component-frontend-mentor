@@ -1,6 +1,6 @@
 /* variables */
 :root {
-  --min-mobile-width: 375px;
+  --min-mobile-width: 350px;
   --max-desktop-width: 1440px;
   --pale-blue: hsl(225, 100%, 94%);
   --bright-blue: hsl(245, 75%, 52%);
@@ -181,12 +181,40 @@ main {
 
 /* media queries */
 @media only screen and (max-width: 768px) {
+  .summarycard__content h1 {
+    font-size: 22px;
+  }
+
+  .summarycard__content > p {
+    font-size: 15px;
+  }
+
+  .summarycard__content {
+    padding: 32px;
+  }
+
+  .summarycard__content__plan {
+    padding: 17px;
+  }
+
+  .summarycard__content__plan h3 {
+    font-size: 14px;
+  }
+
+  .summarycard__content__plan p {
+    font-size: 14px;
+    margin-top: 4px;
+  }
+
+  .summarycard__content__plan a {
+    font-size: 13px;
+  }
+
   #graphic-asset {
     height: 32%;
     background: url("../../images/pattern-background-mobile.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-x: center;
-    background-position-y: top;
+    background-position: center 100%;
   }
 }
