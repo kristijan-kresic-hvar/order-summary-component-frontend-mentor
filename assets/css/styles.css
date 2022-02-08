@@ -1,6 +1,6 @@
 /* variables */
 :root {
-  --min-mobile-width: 350px;
+  --min-mobile-width: 340px;
   --max-desktop-width: 1440px;
   --pale-blue: hsl(225, 100%, 94%);
   --bright-blue: hsl(245, 75%, 52%);
@@ -33,7 +33,7 @@ main {
   border-radius: 20px;
   width: 90%;
   min-width: var(--min-mobile-width);
-  max-width: 480px;
+  max-width: 450px;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
