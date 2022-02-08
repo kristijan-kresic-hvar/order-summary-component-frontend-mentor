@@ -1,6 +1,6 @@
 /* variables */
 :root {
-  --min-mobile-width: 340px;
+  --min-mobile-width: 330px;
   --max-desktop-width: 1440px;
   --pale-blue: hsl(225, 100%, 94%);
   --bright-blue: hsl(245, 75%, 52%);
@@ -33,7 +33,7 @@ main {
   border-radius: 20px;
   width: 90%;
   min-width: var(--min-mobile-width);
-  max-width: 450px;
+  max-width: 470px;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -142,6 +142,8 @@ main {
   line-height: 20px;
   color: #ffffff;
   transition: background 200ms ease-in-out;
+  border: none;
+  outline-color: transparent;
 }
 
 .summarycard__content__actions button:hover {
@@ -180,7 +182,39 @@ main {
 }
 
 /* media queries */
-@media only screen and (max-width: 768px) {
+
+@media only screen and (max-width: 375px) {
+  .summarycard__content h1 {
+    font-size: 21px;
+  }
+
+  .summarycard__content > p {
+    font-size: 14px;
+  }
+
+  .summarycard__content {
+    padding: 28px;
+  }
+
+  .summarycard__content__plan {
+    padding: 16px;
+  }
+
+  .summarycard__content__plan h3 {
+    font-size: 13px;
+  }
+
+  .summarycard__content__plan p {
+    font-size: 13px;
+    margin-top: 4px;
+  }
+
+  .summarycard__content__plan a {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
   .summarycard__content h1 {
     font-size: 22px;
   }
@@ -190,7 +224,7 @@ main {
   }
 
   .summarycard__content {
-    padding: 32px;
+    padding: 28px;
   }
 
   .summarycard__content__plan {
